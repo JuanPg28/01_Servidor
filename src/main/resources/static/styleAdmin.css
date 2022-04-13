@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    background: linear-gradient(1000deg, #49a09d, #5f2c82);
+    margin: 0;
+    padding: 0%;
+    font-family: Nitti,Courier New,monospace;
+    font-weight: 100;
+    overflow: hidden;
+}
+
+#box-clase {
+    display: block;
+    text-align: center;
+}
+
+#box-clase h1 {
+    color: white;
+    font-size: 5em;
+    font-family: 'Pacifico', cursive;
+}
+
+#back {
+    display: block;
+    text-align: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+#back img{
+    width: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#box-button{
+    display: block;
+    text-align: center;
+}
+
+.button-box {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 150px;
+    height: 100px;
+    transition: 1s;
+    margin-bottom: 300px;
+}
+
+.button-box:active {
+  box-shadow: 0px 0px 0px 0px;
+}
+
+.button-box:hover {
+    font-size: 20px;
+    width: 180px;
+    height: 130px;
+}
+
+@media (min-width: 768px) {
+  .button-box {
+    padding: 0.25em 0.75em;
+  }
+}

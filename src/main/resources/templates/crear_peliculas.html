@@ -6,17 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylePeli.css">
+    <script src="https://kit.fontawesome.com/da327203e1.js" crossorigin="anonymous"></script>
     <title>Crear Productos</title>
 </head>
 
 <body>
-    <h1>Peliculas</h1>
+    <a href="admin.html" id="back"><img src="../image/back2.png" alt=""></a>
+    <div class="box-portada">
+        <div id="box-clase"><h1>Peliculas</h1></div>
+        <div id="box-img"><img src="../image/logojuan-cnm.png" alt=""></div>
+    </div>
     <p th:text="${titulo}">xx</p>
     <div class="container">
         <table>
             <thead>
                 <tr>
-                    <th title="Identificador">Identificador</th>
+                    <th>Identificador</th>
                     <th>Titulo</th>
                     <th>Sinopsis</th>
                     <th>Año_Estreno</th>
@@ -29,10 +34,10 @@
             <tbody>
                 <tr th:each="peliculas: ${lista_peliculas}">
 
-                    <td th:text="${peliculas.identificador}"></td>
+                    <td id="identificador" th:text="${peliculas.identificador}"></td>
                     <td th:text="${peliculas.titulo}"></td>
                     <td th:text="${peliculas.sinopsis}"></td>
-                    <td th:text="${peliculas.anyo}"></td>
+                    <td id="anyo" th:text="${peliculas.anyo}"></td>
                     <td><img th:src="${peliculas.imagen}" alt="" width="100px"></td>
                     <td><iframe width="200" height="150" th:src="${peliculas.video}" title="YouTube video player"
                             frameborder="0"
@@ -44,14 +49,14 @@
             </tbody>
         </table>
     </div>
-    <div>
+    <div class="box-input">
         <form method="get" action="/crearPeliculas">
             <input type="text" name="titulo" placeholder="Nombre de la pelicula">
-            <input type="text" name="sinopsis" placeholder="Sinopsis">
             <input type="number" name="año_Estreno" placeholder="Año de Estreno">
-            <input type="text" name="imagen" placeholder="Imagen">
-            <input type="text" name="video" placeholder="Trailer">
-            <input type="submit" value="enviar">
+            <input type="text" name="imagen" placeholder="Url Imagen">
+            <input type="text" name="video" placeholder="Url Trailer">
+            <input id="sinopsis" type="text" name="sinopsis" placeholder="Sinopsis">
+            <input id="enviar" type="submit" value="Enviar">
         </form>
     </div>
 </body>

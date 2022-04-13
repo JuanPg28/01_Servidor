@@ -1,24 +1,51 @@
-html,
-body {
-    height: 100%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
     margin: 0;
-    background: linear-gradient(45deg, #49a09d, #5f2c82);
-    font-family: sans-serif;
+    background: linear-gradient(140deg, #49a09d, #5f2c82);
+    font-family: Nitti,Courier New,monospace;
     font-weight: 100;
 }
 
+.box-portada  {
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.box-portada #box-clase {
+    display: inline;
+    float: left;
+    left: 0px;
+    margin-left: 70px;
+}
+
+.box-portada div h1 {
+    color: white;
+    font-size: 5em;
+    font-family: 'Pacifico', cursive;
+}
+
+.box-portada #box-img{
+    float: right;
+    right: 0px;
+    margin-right: 70px;
+}
+
+.box-portada #box-img img {
+    padding-top: 50px;
+    width: 150px;
+}
+
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    margin-top: 65px;
+    justify-content: center;
 }
 
 table {
-    width: 800px;
+    width: 90%;
+    margin: auto;
     border-collapse: collapse;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -32,7 +59,7 @@ td {
 }
 
 th {
-    text-align: left;
+    text-align: center;
 }
 
 thead th {
@@ -46,28 +73,87 @@ tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-tbody td {
-    position: relative;
-}
-
 tbody td:hover {
     content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -9999px;
-    bottom: -9999px;
     background-color: rgba(255, 255, 255, 0.2);
     z-index: -1;
 }
 
 tbody td:before {
     content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -9999px;
-    bottom: -9999px;
     background-color: rgba(255, 255, 255, 0.2);
     z-index: -1;
+}
+
+tbody #identificador, tbody #anyo {
+    text-align: center;
+}
+
+.box-input {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.box-input input {
+    padding: 0.75em 0 0.88rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 0 solid #ced4da;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+    width: 400px;
+    font-family: Nitti,Courier New,monospace;
+}
+
+.box-input #sinopsis {
+    width: 810px;
+}
+
+.box-input #enviar {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #ced4da;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 300px;
+    margin-left: 60px;
+    transition: 1s;
+}
+
+.box-input #enviar:active {
+    box-shadow: 0px 0px 0px 0px;
+}
+
+.box-input #enviar:hover {
+    width: 320px;
+}
+
+.box-input input::placeholder {
+    color: white;
+    font-family: Nitti,Courier New,monospace;
+}
+
+#back {
+    display: block;
+    text-align: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+#back img{
+    width: 50px;
 }

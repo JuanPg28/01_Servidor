@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylePeli.css">
     <script src="https://kit.fontawesome.com/da327203e1.js" crossorigin="anonymous"></script>
-    <title>Crear Productos</title>
+    <link  rel="icon" href="../favicon.ico">
+    <title>CINEMA ― 100% PURO & REAL</title>
 </head>
 
 <body>
@@ -43,7 +44,7 @@
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe></td>
-                    <td><a th:href="@{borrarPeliculas(id=${peliculas.identificador})}">BORRAR</a></td>
+                    <td id="borrar"><a th:href="@{borrarPeliculas(id=${peliculas.identificador})}"><img id="remove" src="../image/trash-can-solid.svg" alt=""></a></td>
 
                 </tr>
             </tbody>

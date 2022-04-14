@@ -35,6 +35,7 @@ body {
 .box-portada #box-img img {
     padding-top: 50px;
     width: 150px;
+    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(76deg) brightness(102%) contrast(101%);
 }
 
 .container {
@@ -85,8 +86,14 @@ tbody td:before {
     z-index: -1;
 }
 
-tbody #identificador, tbody #anyo {
+tbody #identificador, tbody #anyo, tbody #borrar{
     text-align: center;
+}
+
+tbody #remove {
+    width: 30px;
+    text-align: center;
+    filter: invert(100%) sepia(41%) saturate(0%) hue-rotate(200deg) brightness(108%) contrast(101%);
 }
 
 .box-input {

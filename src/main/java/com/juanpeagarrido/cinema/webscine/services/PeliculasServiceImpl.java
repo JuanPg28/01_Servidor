@@ -37,5 +37,12 @@ public class PeliculasServiceImpl implements IPeliculasService {
 		return peliculas;
 	}
 
+	@Override
+	public void save(Pelicula p) {
+		repo.save(p);
+		
+	}
+	
+
 
 }

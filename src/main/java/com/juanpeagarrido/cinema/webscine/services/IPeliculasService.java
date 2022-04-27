@@ -10,7 +10,8 @@ public interface IPeliculasService {
 	public List<Pelicula> findAll();
 	public void delete(Integer id);
 	public List<Pelicula> findAllByAnyo(Integer estreno);
-	public void save(Pelicula p);
+	public void save(Pelicula p) throws Exception;
+	public void update(Pelicula modi);
 
 
 }

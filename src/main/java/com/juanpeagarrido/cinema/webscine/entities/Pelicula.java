@@ -22,9 +22,12 @@ public class Pelicula {
 		super();
 	}
 
+	
+
 	//Constructor completo sin Id
-	public Pelicula(String titulo, String sinopsis, Integer anyo, String imagen, String video) {
+	public Pelicula(Integer identificador, String titulo, String sinopsis, Integer anyo, String imagen, String video) {
 		super();
+		Identificador = identificador;
 		Titulo = titulo;
 		Sinopsis = sinopsis;
 		Anyo = anyo;
@@ -40,11 +43,9 @@ public class Pelicula {
 
 
 
-
 	public void setIdentificador(Integer identificador) {
 		Identificador = identificador;
 	}
-
 
 
 
@@ -54,11 +55,9 @@ public class Pelicula {
 
 
 
-
 	public void setTitulo(String titulo) {
 		Titulo = titulo;
 	}
-
 
 
 
@@ -68,11 +67,9 @@ public class Pelicula {
 
 
 
-
 	public void setSinopsis(String sinopsis) {
 		Sinopsis = sinopsis;
 	}
-
 
 
 
@@ -82,11 +79,9 @@ public class Pelicula {
 
 
 
-
 	public void setAnyo(Integer anyo) {
 		Anyo = anyo;
 	}
-
 
 
 
@@ -96,18 +91,15 @@ public class Pelicula {
 
 
 
-
 	public void setImagen(String imagen) {
 		Imagen = imagen;
 	}
 
 
 
-
 	public String getVideo() {
 		return Video;
 	}
-
 
 
 

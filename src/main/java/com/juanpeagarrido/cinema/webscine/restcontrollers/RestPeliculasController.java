@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -63,6 +65,12 @@ public class RestPeliculasController {
 		return peliculasService.findAllByAnyo(estreno);
 	}
 	
+	@DeleteMapping(path = "/eliminarPeliculas", produces = {MediaType.APPLICATION_JSON_VALUE})
+	Respuesta borrarPeliculas(@RequestParam(required=false)Integer id) {
+			peliculasService.delete(id);
+			return new Respuesta(0, "OK");
+}
+	
 	@PostMapping(path = "/peliculasnew", produces = { MediaType.APPLICATION_JSON_VALUE })
 	Respuesta addPelicula(
 			@RequestParam(required=false) Integer identificador,
@@ -71,9 +79,28 @@ public class RestPeliculasController {
 			@RequestParam(required=false) Integer anyo,
 			@RequestParam(required=false) String imagen,
 			@RequestParam(required=false) String video) {
-		peliculasService.save(new Pelicula(titulo, sinopsis, anyo, imagen, video));
-		return new Respuesta(0, "OK");
+		try {
+			peliculasService.save(new Pelicula(0, titulo, sinopsis, anyo, imagen, video));
+		} catch(Exception e) {
+			return new Respuesta(-1, e.getMessage());
+		}
+			return new Respuesta(0, "OK");
 		
 	}
-
+	
+	@PutMapping(path = "/peliculasmodi", produces = { MediaType.APPLICATION_JSON_VALUE})
+	Respuesta updatePelis(
+			@RequestParam(required=true) Integer identificador,
+			@RequestParam(required=true) String titulo,
+			@RequestParam(required=true) String sinopsis,
+			@RequestParam(required=true) Integer anyo,
+			@RequestParam(required=true) String imagen,
+			@RequestParam(required=true) String video) {
+		try {
+			peliculasService.save(new Pelicula(identificador, titulo, sinopsis, anyo, imagen, video));
+		} catch(Exception e) {
+			return new Respuesta(-1, e.getMessage());
+		}
+			return new Respuesta(0, "OK");
+	}
 }

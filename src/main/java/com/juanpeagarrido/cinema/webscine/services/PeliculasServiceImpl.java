@@ -10,6 +10,8 @@ import com.juanpeagarrido.cinema.webscine.repository.IPeliculasRepository;
 
 @Service
 public class PeliculasServiceImpl implements IPeliculasService {
+	
+	final static int ANYO_MINIMO=2018;
 
 	@Autowired
 	IPeliculasRepository repo;
@@ -38,8 +40,17 @@ public class PeliculasServiceImpl implements IPeliculasService {
 	}
 
 	@Override
-	public void save(Pelicula p) {
+	public void save(Pelicula p) throws Exception {
+		if (p.getAnyo()<ANYO_MINIMO) {
+			throw new Exception("El año de estreno debe ser mayor al " + ANYO_MINIMO);
+		}
 		repo.save(p);
+		
+	}
+
+	@Override
+	public void update(Pelicula modi) {
+		repo.save(modi);
 		
 	}
 	

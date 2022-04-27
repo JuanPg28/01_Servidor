@@ -26,7 +26,7 @@ public class PeliculasController {
 			@RequestParam(required=false) String imagen,
 			@RequestParam(required=false) String video) {
 		if(titulo!=null) {
-			Pelicula p = new Pelicula(titulo, sinopsis, anyo, imagen, video);
+			Pelicula p = new Pelicula(0, titulo, sinopsis, anyo, imagen, video);
 			peliculasService.add(p);
 			return new ModelAndView("redirect:/crearPeliculas");
 		}
